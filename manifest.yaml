@@ -1,0 +1,105 @@
+id: phoenixd-lightning-wallet
+title: "Hello World"
+version: 0.0.1
+release-notes: |
+  - Mvp release
+  - Send & Receive functionality for BOLT11 and BOLT12 
+  - Add and pay contacts
+  - View transactions history table
+license: MIT
+wrapper-repo: "https://github.com/hkarani/Start9-Wrapper--Phoenixd-wallet.git"
+upstream-repo: "https://github.com/hkarani/phoenix-server-lightning-wallet.git"
+# support-site: ""
+# marketing-site: ""
+build: ["make"]
+description:
+  short: Phoenixd Wallet
+  long: |
+    A lightning wallet UI on top of Phoenix Server (phoenixd)
+assets:
+  license: LICENSE
+  icon: icon.png
+  instructions: instructions.md
+
+main:
+  type: docker
+  image: main
+  entrypoint: "docker_entrypoint.sh"
+  args: []
+  mounts:
+    main: /root/.phoenix
+    dbjson: /usr/src/app/dbjson
+  gpu-acceleration: false
+# Defines what architectures will be supported by the service. This service supports x86_64 and aarch64 architectures.
+hardware-requirements:
+  arch:
+    - x86_64
+    - aarch64
+# This is where health checks would be defined - see a more advanced example in https://github.com/Start9Labs/start9-pages-startos
+health-checks:
+  phoenixd:
+    name: connected
+    success-message: Phoenixd is connected to lightning peer
+    type: script
+    # image: main
+    # entry_point: "check-phoenixd.sh"
+    # args: []
+    # mounts: {}
+    # io-format: json
+    # inject: true
+config: ~
+properties: ~
+#  type: script
+volumes:
+  main:
+    type: data
+  dbjson:
+    type: data
+
+interfaces:
+  main:
+    # A human readable name for display in the UI
+    name: Phoeinixd wallet UI
+    description: Wallet UI for phoenixd
+    tor-config:
+    # Port mappings are from the external port to the internal container port
+      port-mapping:
+        3000: "3000"
+    # Port mappings are from the external port to the internal container port
+    lan-config:
+      443:
+        ssl: true
+        internal: 3000
+    ui: true
+    protocols:
+      - tcp
+      - http
+dependencies: {}
+
+backup:
+  create:
+    type: docker
+    image: compat 
+    system: true 
+    entrypoint: compat 
+    args:
+      - duplicity
+      - create
+      - /mnt/backup
+      - /root/.phoenix
+    mounts:
+      BACKUP: "/mnt/backup" 
+      main: "/root/.phoenix"
+  restore:
+    type: docker
+    image: compat
+    system: true
+    entrypoint: compat
+    args:
+      - duplicity
+      - restore
+      - /mnt/backup
+      - /root/data
+    mounts:
+      BACKUP: "/mnt/backup"
+      main: "/root/data"

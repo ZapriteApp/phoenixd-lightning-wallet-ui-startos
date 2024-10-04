@@ -1,0 +1,3 @@
+[submodule "phoenixd-lightning-wallet"]
+	path = phoenixd-lightning-wallet
+	url = https://github.com/hkarani/phoenix-server-lightning-wallet.git
