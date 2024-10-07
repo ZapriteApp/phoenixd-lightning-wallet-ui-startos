@@ -1,13 +1,13 @@
-FROM ubuntu:22.04
+FROM debian:bullseye-slim
 
 RUN apt-get update && apt-get install -y curl \
-    curl \
     wget \
     unzip \
-    supervisor
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs
+    && apt-get install -y --no-install-recommends nodejs \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
 
@@ -21,7 +21,8 @@ RUN touch .env
 
 RUN wget https://github.com/ACINQ/phoenixd/releases/download/v0.3.3/phoenix-0.3.3-linux-x64.zip \
     && unzip -j phoenix-0.3.3-linux-x64.zip -d /usr/local/bin/ \
-    && chmod +x /usr/local/bin/phoenixd
+    && chmod +x /usr/local/bin/phoenixd \
+    && rm phoenix-0.3.3-linux-x64.zip
 
 COPY /phoenixd-lightning-wallet/docker_entrypoint.sh /usr/src/app/docker_entrypoint.sh
 
