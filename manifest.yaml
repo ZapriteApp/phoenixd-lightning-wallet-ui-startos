@@ -1,21 +1,21 @@
-id: phoenixd-lightning-wallet
-title: "Phoenixd-lightning-wallet"
-version: 0.0.1
+id: phoenixd-lightning-wallet-ui
+title: "Phoenixd Lightning Wallet UI"
+version: 0.1.0
 release-notes: |
   - Mvp release
   - Send & Receive functionality for BOLT11 and BOLT12 
   - Add and pay contacts
   - View transactions history table
 license: MIT
-wrapper-repo: "https://github.com/hkarani/Start9-Wrapper--Phoenixd-wallet.git"
-upstream-repo: "https://github.com/hkarani/phoenix-server-lightning-wallet.git"
+wrapper-repo: "https://github.com/hkarani/phoenixd-lightning-wallet-ui-startos"
+upstream-repo: "https://github.com/hkarani/phoenixd-lightning-wallet-ui.git"
 # support-site: ""
 # marketing-site: ""
 build: ["make"]
 description:
-  short: Phoenixd Wallet
+  short: Phoenixd-wallet-UI
   long: |
-    A lightning wallet UI on top of Phoenix Server (phoenixd)
+    A lightning wallet UI for Phoenix Server (phoenixd)
 assets:
   license: LICENSE
   icon: icon.png
@@ -37,16 +37,10 @@ hardware-requirements:
     - aarch64
 # This is where health checks would be defined - see a more advanced example in https://github.com/Start9Labs/start9-pages-startos
 health-checks:
-  phoenixd:
+  interface:
     name: connected
     success-message: Phoenixd is connected to lightning peer
     type: script
-    # image: main
-    # entry_point: "check-phoenixd.sh"
-    # args: []
-    # mounts: {}
-    # io-format: json
-    # inject: true
 config: ~
 properties: ~
 #  type: script
