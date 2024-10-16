@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icon.png" alt="Project Logo" width="21%">
+  <img src="imgs/dashboard.png" alt="Project Logo" width="21%">
 </p>
 
 # Phoenixd Lightning Wallet UI for StartOS
