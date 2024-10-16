@@ -2,11 +2,40 @@
   <img src="imgs/dashboard.png" alt="Project Logo" width="100%">
 </p>
 
-# Phoenixd Lightning Wallet UI for StartOS
+# Phoenixd Lightning Wallet(StartOS)
 
 This is lightning wallet UI on top of Phoenixd server by ACINQ. It serves as a wallet interface for phoenixd, allowing you to transact while running on StartOS.
 
 This repository creates the `s9pk` package that is installed to run `phoenixd-lightning-wallet-ui` on [StartOS](https://github.com/Start9Labs/start-os/). Learn more about service packaging in the [Developer Docs](https://start9.com/latest/developer-docs/).
+
+## Installing (on StartOS)
+
+### 1. Installing s9k as a serivice
+
+### 2. Installing via cli
+
+Run the following commands to determine successful install:
+> :information_source: Change server-name.local to your Start9 server address
+
+```
+start-cli auth login
+# Enter your StartOS password
+start-cli --host https://server-name.local package install phoenixd-lightning-wallet-ui.s9pk
+```
+
+If you already have your `start-cli` config file setup with a default `host`, you can install simply by running:
+
+```
+make install
+```
+
+> **Tip:** You can also install the phoenixd-lightning-wallet-ui.s9pk using **Sideload Service** under the **System > Manage** section.
+
+### Verify Install
+
+Go to your StartOS Services page, select **Phoenixd lightning wallet UI**, configure and start the service. Then, verify its interfaces are accessible.
+
+**Done!** 
 
 ## Dependencies
 
@@ -19,7 +48,7 @@ Install the system dependencies below to build this project by following the ins
 - [make](https://www.gnu.org/software/make/)
 - [start-sdk](https://github.com/Start9Labs/start-os/tree/sdk/)
 
-## Build environment
+## Build it Yourself
 Prepare your StartOS build environment. In this example we are using Ubuntu 20.04.
 1. Install docker
 ```
@@ -97,27 +126,3 @@ or
 make arm
 ```
 
-## Installing (on StartOS)
-
-Run the following commands to determine successful install:
-> :information_source: Change server-name.local to your Start9 server address
-
-```
-start-cli auth login
-# Enter your StartOS password
-start-cli --host https://server-name.local package install phoenixd-lightning-wallet-ui.s9pk
-```
-
-If you already have your `start-cli` config file setup with a default `host`, you can install simply by running:
-
-```
-make install
-```
-
-> **Tip:** You can also install the phoenixd-lightning-wallet-ui.s9pk using **Sideload Service** under the **System > Manage** section.
-
-### Verify Install
-
-Go to your StartOS Services page, select **Phoenixd lightning wallet UI**, configure and start the service. Then, verify its interfaces are accessible.
-
-**Done!** 
