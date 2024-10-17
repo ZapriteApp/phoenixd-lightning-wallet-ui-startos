@@ -58,7 +58,7 @@ interfaces:
     tor-config:
     # Port mappings are from the external port to the internal container port
       port-mapping:
-        3000: "3000"
+        80: "3000"
     # Port mappings are from the external port to the internal container port
     lan-config:
       443:
