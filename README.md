@@ -4,9 +4,15 @@
 
 # Phoenixd Lightning Wallet(StartOS)
 
-This is lightning wallet UI on top of Phoenixd server by ACINQ. It serves as a wallet interface for phoenixd, allowing you to transact while running on StartOS.
+# Phoenixd Lightning Wallet UI
+
+This project is a Lightning wallet interface built on top of a [Phoenixd server](https://phoenix.acinq.co/server/) designed for [Start9](https://start9.com/) and Umbrel. It allows you to utilize the wallet capabilities of Phoenixd, providing a seamless experience for transacting while running on StartOS.
+
+Easily manage your phoenixd transactions and leverage the power of Phoenixd for your Lightning wallet needs.
+
 
 This repository creates the `s9pk` package that is installed to run `phoenixd-lightning-wallet-ui` on [StartOS](https://github.com/Start9Labs/start-os/). Learn more about service packaging in the [Developer Docs](https://start9.com/latest/developer-docs/).
+
 
 ## Installing (on StartOS)
 
@@ -37,7 +43,23 @@ Go to your StartOS Services page, select **Phoenixd lightning wallet UI**, confi
 
 **Done!** 
 
-## Dependencies
+## Features
+
+- ~~Send and receive bitcoin with Bolt11 invoices~~
+- ~~Pay offer and receive bitcoin with BOLT12 offers~~
+- ~~Paginated transactions history table~~
+- ~~Pay wallet contacts~~
+- ~~Contacts address book~~
+- ~~Password login~~
+- ~~Import Wallet offer with QR Scan~~
+- ~~Scan QR to receive bitcoin with BOLT11 invoice~~
+- ~~Show bitcoin value in USD~~
+- ~~Wallet seed backup confirmation before setting password~~
+
+
+## Build it Yourself
+
+### Dependencies
 
 Install the system dependencies below to build this project by following the instructions in the provided links. You can find instructions on how to set up the appropriate build environment in the [Developer Docs](https://docs.start9.com/latest/developer-docs/packaging).
 
@@ -48,7 +70,8 @@ Install the system dependencies below to build this project by following the ins
 - [make](https://www.gnu.org/software/make/)
 - [start-sdk](https://github.com/Start9Labs/start-os/tree/sdk/)
 
-## Build it Yourself
+### Build s9pk file
+
 Prepare your StartOS build environment. In this example we are using Ubuntu 20.04.
 1. Install docker
 ```
