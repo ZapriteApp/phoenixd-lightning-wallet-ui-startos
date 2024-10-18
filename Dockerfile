@@ -28,7 +28,8 @@ RUN wget https://github.com/ACINQ/phoenixd/releases/download/v0.3.3/phoenix-0.3.
 COPY ./docker_entrypoint.sh  /usr/local/bin/docker_entrypoint.sh
 
 RUN chmod 755 /usr/local/bin/docker_entrypoint.sh
-
+ADD ./check-phoenixd.sh /usr/local/bin/check-phoenixd.sh
+RUN chmod +x /usr/local/bin/check-phoenixd.sh
 EXPOSE 3000
 
 # ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]

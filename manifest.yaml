@@ -37,10 +37,15 @@ hardware-requirements:
     - aarch64
 # This is where health checks would be defined - see a more advanced example in https://github.com/Start9Labs/start9-pages-startos
 health-checks:
-  interface:
-    name: connected
-    success-message: Phoenixd is connected to lightning peer
-    type: script
+  main:
+    name: Running
+    success-message: Wallet is running
+    type: docker
+    image: main
+    entrypoint: check-phoenixd.sh
+    args: []
+    io-format: json
+    inject: true
 config: ~
 properties: ~
 #  type: script
