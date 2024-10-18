@@ -37,9 +37,19 @@ hardware-requirements:
     - aarch64
 # This is where health checks would be defined - see a more advanced example in https://github.com/Start9Labs/start9-pages-startos
 health-checks:
-  main:
-    name: Running
-    success-message: Wallet is running
+  web-ui:
+    name: Wallet Interface
+    success-message: The wallet UI is ready to be visited in your browser
+    type: docker
+    image: main
+    entrypoint: check-ui.sh
+    args: []
+    io-format: json
+    inject: true
+    
+  phoenixd:
+    name: Phoenixd Daemon
+    success-message: Phoenixd is running and connected to a lightning peer
     type: docker
     image: main
     entrypoint: check-phoenixd.sh
@@ -54,6 +64,22 @@ volumes:
     type: data
   dbjson:
     type: data
+alerts:
+  install: 
+    <p>Phoenixd Lightning Wallet UI is a self-hosted wallet running on top of a Phoenix Server lightning node. No third party exists to backup your wallet seed or data, so you are fully responsible for securing funds and backing up your wallet information.</p>
+
+  <p>The wallet seed generated during the initial setup is critical for recovering your wallet in case of data loss. Please back up this seed securely IMMEDIATELY after installing the wallet. </p>
+
+
+   <p><b>PLEASE READ</b> the <b>INSTRUCTIONS</b> after installation!</p>
+  uninstall: 
+    <p><b>READ CAREFULLY!</b></p>
+    
+    <p>Uninstalling Phoenixd-lightning-wallet will result in permanent loss of access to you valuable bitcoin or contacts you created. The only way to ensure data is not lost to to backup your wallet seed to recover your funds.</p>
+  restore: 
+    Restoring Phoenixd-lightning-wallet will overwrite its current data.
+    
+    Any data created since the last backup will be not be recognized.
 
 interfaces:
   main:
