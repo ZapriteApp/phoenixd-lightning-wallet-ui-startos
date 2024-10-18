@@ -1,10 +1,12 @@
 <p align="center">
-  <img src="imgs/dashboard.png" alt="Project Logo" width="80%">
+<img src="imgs/dashboard.png" alt="Dashboard page" width="40%">
+<img src="imgs/login.png" alt="Login page" width="40%">
+<img src="imgs/transaction page.png" alt="Transaction page" width="40%">
+<img src="imgs/contacts page.png" alt="Contacts page" width="40%">
 </p>
 
-# Phoenixd Lightning Wallet(StartOS)
 
-# Phoenixd Lightning Wallet UI
+# Phoenixd Lightning Wallet UI (StartOS)
 
 This project is a Lightning wallet interface built on top of a [Phoenixd server](https://phoenix.acinq.co/server/) designed for [Start9](https://start9.com/) and Umbrel. It allows you to utilize the wallet capabilities of Phoenixd, providing a seamless experience for transacting while running on StartOS.
 
@@ -16,7 +18,9 @@ This repository creates the `s9pk` package that is installed to run `phoenixd-li
 
 ## Installing (on StartOS)
 
-### 1. Installing s9k as a serivice
+### 1. Installing s9k as a sideload serivice
+
+
 
 ### 2. Installing via cli
 
