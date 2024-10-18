@@ -30,6 +30,9 @@ COPY ./docker_entrypoint.sh  /usr/local/bin/docker_entrypoint.sh
 RUN chmod 755 /usr/local/bin/docker_entrypoint.sh
 ADD ./check-phoenixd.sh /usr/local/bin/check-phoenixd.sh
 RUN chmod +x /usr/local/bin/check-phoenixd.sh
+
+ADD ./check-ui.sh /usr/local/bin/check-ui.sh
+RUN chmod +x /usr/local/bin/check-ui.sh
 EXPOSE 3000
 
 # ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]
