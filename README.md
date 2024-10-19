@@ -55,18 +55,23 @@ Go to your StartOS Services page, select **Phoenixd lightning wallet UI**, confi
 
 ## Features
 
-- ~~Send and receive bitcoin with Bolt11 invoices~~
-- ~~Pay offer and receive bitcoin with BOLT12 offers~~
-- ~~Paginated transactions history table~~
-- ~~Pay wallet contacts~~
-- ~~Contacts address book~~
-- ~~Password login~~
-- ~~Import Wallet offer with QR Scan~~
-- ~~Scan QR to receive bitcoin with BOLT11 invoice~~
-- ~~Show bitcoin value in USD~~
-- ~~Wallet seed backup confirmation before setting password~~
-
-
+- [x] ~~Send and receive bitcoin with Bolt11 invoices~~
+- [x] ~~Pay offer and receive bitcoin with BOLT12 offers~~
+- [x] ~~Paginated transactions history table~~
+- [x] ~~Pay wallet contacts~~
+- [x] ~~Contacts address book~~
+- [x] ~~Password login~~
+- [x] ~~Import Wallet offer with QR Scan~~
+- [x] ~~Scan QR to pay BOLT11 invoices~~
+- [x] ~~Show bitcoin value in USD~~
+- [x] ~~Wallet seed backup confirmation before setting password~~
+- [ ] Wallet notifications
+- [ ] Create multiple wallets
+- [ ] Recieve bitcoin with mainnet address
+- [ ] Import wallet contacts
+- [ ] Show sats amount in USD on transction table
+- [ ] Add your BTC price fetching api
+- [ ] Choose default currency
 ## Build it Yourself
 
 ### Dependencies
