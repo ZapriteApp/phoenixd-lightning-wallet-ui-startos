@@ -8,10 +8,7 @@
 
 # Phoenixd Lightning Wallet UI (StartOS)
 
-This project is a Lightning wallet interface built on top of a [Phoenixd server](https://phoenix.acinq.co/server/) designed for [Start9](https://start9.com/) and Umbrel. It allows you to utilize the wallet capabilities of Phoenixd, providing a seamless experience for transacting while running on StartOS.
-
-Easily manage your phoenixd transactions and leverage the power of Phoenixd for your Lightning wallet needs.
-
+This project is a Lightning wallet interface built on top of [Phoenixd server](https://phoenix.acinq.co/server/) designed for [Start9 server](https://start9.com/). It allows you to easily manage your phoenixd transactions and leverage the power of Phoenixd for your Bitcoin Lightning wallet needs.
 
 This repository creates the `s9pk` package that is installed to run `phoenixd-lightning-wallet-ui` on [StartOS](https://github.com/Start9Labs/start-os/). Learn more about service packaging in the [Developer Docs](https://start9.com/latest/developer-docs/).
 
