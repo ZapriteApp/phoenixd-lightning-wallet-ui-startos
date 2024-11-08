@@ -10,17 +10,18 @@ echo "PHOENIX_API_URL=http://127.0.0.1:9740" >> $ENV_FILE
 echo "Values copied to $ENV_FILE."
 
 # Start the phoenixd daemon
-echo "Starting phoenixd daemon..."
-/usr/local/bin/phoenixd & 
-sleep 1                  
-if ! pgrep -x "phoenixd" > /dev/null; then
-    echo "[ERROR] phoenixd failed to start"
-    exit 1
+if pgrep -x "phoenixd" > /dev/null; then
+    echo "[i] phoenixd is already running as a dependency."
+else
+    echo "[i] Starting phoenixd daemon from the local binary..."
+    /usr/local/bin/phoenixd &
+    sleep 1
+    if ! pgrep -x "phoenixd" > /dev/null; then
+        echo "[ERROR] phoenixd failed to start."
+        exit 1
+    fi
+    echo "[i] phoenixd started successfully."
 fi
-echo "phoenixd started successfully."
-
-chmod -R 755 /root/.phoenix
-ls /root/.phoenix
 
 # Start the Node.js application
 echo "Starting Node.js application..."

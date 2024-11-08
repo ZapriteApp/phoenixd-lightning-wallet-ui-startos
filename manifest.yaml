@@ -1,6 +1,6 @@
 id: phoenixd-lightning-wallet-ui
 title: "Phoenixd Lightning Wallet UI"
-version: 0.1.0
+version: 0.1.1
 release-notes: |
   - Mvp release
   - Send & Receive functionality for BOLT11 and BOLT12 
@@ -68,7 +68,7 @@ alerts:
   install: 
     <p>Phoenixd Lightning Wallet UI is a self-hosted wallet running on top of a Phoenix Server lightning node. No third party exists to backup your wallet seed or data, so you are fully responsible for securing funds and backing up your wallet information.</p>
 
-    <p>The wallet seed generated during the initial setup is critical for recovering your wallet in case of data loss. Please back up this seed securely IMMEDIATELY after installing the wallet.</p>
+    <p>The wallet seed generated during the initial setup is critical for recovering your wallet in case of anything. Please back up your seed securely IMMEDIATELY after installing the wallet.</p>
 
     <p><b>PLEASE READ</b> the <b>INSTRUCTIONS</b> after installation!</p>
 
@@ -100,8 +100,15 @@ interfaces:
     protocols:
       - tcp
       - http
-dependencies: {}
-
+dependencies:
+  phoenixd:
+    id: phoenixd
+    version: ^0.3.3
+    description: "Phoenix Server for Lightning Network interactions"
+    requirement:
+      type: "opt-in"
+      how: Optionally use Phoenixd already running on your start9.
+      description: Used to a the main service.
 backup:
   create:
     type: docker
