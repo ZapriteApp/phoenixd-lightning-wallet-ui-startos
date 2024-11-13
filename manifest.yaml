@@ -9,8 +9,9 @@ release-notes: |
 license: MIT
 wrapper-repo: "https://github.com/hkarani/phoenixd-lightning-wallet-ui-startos"
 upstream-repo: "https://github.com/hkarani/phoenixd-lightning-wallet-ui.git"
-# support-site: ""
-# marketing-site: ""
+donation-url: "https://pay.zaprite.com/pl_WzwH6KkHKn"
+support-site: "https://github.com/ZapriteApp/phoenix-server-wallet/issues/new"
+marketing-site: "https://zaprite.com/"
 build: ["make"]
 description:
   short: Phoenixd-wallet-UI
@@ -120,9 +121,11 @@ backup:
       - create
       - /mnt/backup
       - /root/.phoenix
+      - /usr/src/app/dbjson 
     mounts:
       BACKUP: "/mnt/backup" 
       main: "/root/.phoenix"
+      dbjson: "/usr/src/app/dbjson"
   restore:
     type: docker
     image: compat
@@ -132,7 +135,9 @@ backup:
       - duplicity
       - restore
       - /mnt/backup
-      - /root/data
+      - /root/.phoenix
+      - /usr/src/app/dbjson
     mounts:
       BACKUP: "/mnt/backup"
-      main: "/root/data"
+      main: "/root/.phoenix"
+      dbjson: "/usr/src/app/dbjson"
