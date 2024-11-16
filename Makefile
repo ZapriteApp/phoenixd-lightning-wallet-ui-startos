@@ -4,13 +4,7 @@ TS_FILES := $(shell find ./ -name \*.ts)
 
 .DELETE_ON_ERROR:
 
-
-
-all: fetch-submodule verify 
-
-fetch-submodule:
-	@echo "Fetching git module..."
-	git submodule update --remote
+all: verify 
 
 verify: $(PKG_ID).s9pk
 	@start-sdk verify s9pk $(PKG_ID).s9pk
