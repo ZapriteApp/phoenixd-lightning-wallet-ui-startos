@@ -101,15 +101,7 @@ interfaces:
     protocols:
       - tcp
       - http
-dependencies:
-  phoenixd:
-    id: phoenixd
-    version: ^0.3.3
-    description: "Phoenix Server for Lightning Network interactions"
-    requirement:
-      type: "opt-in"
-      how: Optionally use Phoenixd already running on your start9.
-      description: Used to a the main service.
+dependencies: {}
 backup:
   create:
     type: script
