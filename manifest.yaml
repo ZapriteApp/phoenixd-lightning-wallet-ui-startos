@@ -112,32 +112,6 @@ dependencies:
       description: Used to a the main service.
 backup:
   create:
-    type: docker
-    image: compat 
-    system: true 
-    entrypoint: compat 
-    args:
-      - duplicity
-      - create
-      - /mnt/backup
-      - /root/.phoenix
-      - /usr/src/app/dbjson 
-    mounts:
-      BACKUP: "/mnt/backup" 
-      main: "/root/.phoenix"
-      dbjson: "/usr/src/app/dbjson"
+    type: script
   restore:
-    type: docker
-    image: compat
-    system: true
-    entrypoint: compat
-    args:
-      - duplicity
-      - restore
-      - /mnt/backup
-      - /root/.phoenix
-      - /usr/src/app/dbjson
-    mounts:
-      BACKUP: "/mnt/backup"
-      main: "/root/.phoenix"
-      dbjson: "/usr/src/app/dbjson"
+    type: script
