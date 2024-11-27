@@ -16,7 +16,7 @@ This repository creates the `s9pk` package that is installed to run `phoenixd-li
 ## Installing (on StartOS)
 
 ### 1. Install as a sideload serivice
-1. Download phoenixd-lightning-wallet-ui.s9pk on your Start9os server [link] (https://github.com/hkarani/phoenixd-lightning-wallet-ui-startos/releases/download/v0.1.1/phoenixd-lightning-wallet-ui.s9pk)
+1. Download phoenixd-lightning-wallet-ui.s9pk on your Start9os server [link] (https://github.com/ZapriteApp/phoenixd-lightning-wallet-ui-startos/releases/download/v0.1.2/phoenixd-lightning-wallet-ui.s9pk)
 
 2. Go **System > Sideload a Service**
 <p align="center">
@@ -139,7 +139,7 @@ Now you are ready to build the `phoenixd-lightning-wallet-ui` package!
 Clone the project locally:
 
 ```
-git clone https://github.com/hkarani/phoenixd-lightning-wallet-ui-startos.git
+git clone https://github.com/ZapriteApp/phoenixd-lightning-wallet-ui-startos.git
 cd phoenixd-lightning-wallet-ui
 git submodule update --init --recursive
 ```
