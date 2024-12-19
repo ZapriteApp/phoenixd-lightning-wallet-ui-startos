@@ -1,3 +1,3 @@
-[submodule "phoenixd-lightning-wallet"]
-	path = phoenixd-lightning-wallet
-	url = https://github.com/hkarani/phoenix-server-lightning-wallet.git
+[submodule "phoenix-server-wallet"]
+	path = phoenix-server-wallet
+	url = https://github.com/ZapriteApp/phoenix-server-wallet.git
