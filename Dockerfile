@@ -10,13 +10,14 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
     && apt-get install -y --no-install-recommends nodejs \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+    
 WORKDIR /usr/src/app
 
-COPY /phoenixd-lightning-wallet/package*.json ./
+COPY /phoenix-server-wallet/package*.json ./
 
 RUN npm install
 
-COPY /phoenixd-lightning-wallet/ .
+COPY /phoenix-server-wallet/ .
 
 RUN touch .env
 
