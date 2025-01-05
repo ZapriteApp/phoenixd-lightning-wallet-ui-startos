@@ -21,10 +21,10 @@ COPY /phoenix-server-wallet/ .
 
 RUN touch .env
 
-RUN wget https://github.com/ACINQ/phoenixd/releases/download/v0.3.3/phoenix-0.3.3-linux-x64.zip \
-    && unzip -j phoenix-0.3.3-linux-x64.zip -d /usr/local/bin/ \
+RUN wget https://github.com/ACINQ/phoenixd/releases/download/v0.4.2/phoenix-0.4.2-linux-x64.zip \
+    && unzip -j phoenix-0.4.2-linux-x64.zip -d /usr/local/bin/ \
     && chmod +x /usr/local/bin/phoenixd \
-    && rm phoenix-0.3.3-linux-x64.zip
+    && rm phoenix-0.4.2-linux-x64.zip
 
 COPY ./docker_entrypoint.sh  /usr/local/bin/docker_entrypoint.sh
 
