@@ -1,11 +1,14 @@
 id: phoenixd-lightning-wallet-ui
 title: 'Phoenixd Lightning Wallet UI'
-version: 0.1.3
+version: 0.1.4
 release-notes: |
     - MVP release
-    - Send & Receive functionality for BOLT11 and BOLT12 
-    - Add and pay contacts
-    - View transactions history table
+    - Fix 
+        Send & Receive functionality for BOLT11 and BOLT12 
+        Double contacts showing up
+        View transactions history table
+    - Update
+        - Phoenixd version to 0.1.4
 license: MIT
 wrapper-repo: 'https://github.com/ZapriteApp/phoenixd-lightning-wallet-ui-startos'
 upstream-repo: 'https://github.com/ZapriteApp/phoenixd-lightning-wallet-ui.git'
