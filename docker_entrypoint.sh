@@ -3,7 +3,7 @@
 printf "\n\n [i] Starting Phoenixd wallet application ...\n\n"
 
 CONF_FILE="/root/.phoenix/phoenix.conf"
-ENV_FILE="/usr/src/app/.env"
+ENV_FILE="/usr/src/app/backend/.env"
 
 # Set the PHOENIX_API_URL in the environment file
 echo "PHOENIX_API_URL=http://127.0.0.1:9740" >> $ENV_FILE
@@ -25,6 +25,6 @@ fi
 
 # Start the Node.js application
 echo "Starting Node.js application..."
-cat /usr/src/app/.env 
+cat /usr/src/app/backend/.env 
 export RUST_BACKTRACE=1
-exec node /usr/src/app/server.js
+exec node /usr/src/app/backend/server.js
