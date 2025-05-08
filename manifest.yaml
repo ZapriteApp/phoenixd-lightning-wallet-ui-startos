@@ -1,14 +1,20 @@
 id: phoenixd-lightning-wallet-ui
 title: 'Phoenixd Lightning Wallet UI'
-version: 0.1.4
+version: 0.1.5
 release-notes: |
-    - MVP release
-    - Fix 
-        Send & Receive functionality for BOLT11 and BOLT12 
-        Double contacts showing up
-        View transactions history table
-    - Update
-        - Phoenixd version to 0.1.4
+    - New
+        Conditionally show logout button only if password is set
+        Internationalized number values
+        Added option pay to contact offer or address
+        Tilda character for missing values in tables and modals
+        Reactive view and copy buttons
+    - Improved
+        Full client refactor to React library
+        Use port 32400 for better port availability
+    - Fixed 
+        Error showing only one contact in view contact modal
+        Double showing records for contacts and transactions
+        UI spelling errors
 license: MIT
 wrapper-repo: 'https://github.com/ZapriteApp/phoenixd-lightning-wallet-ui-startos'
 upstream-repo: 'https://github.com/ZapriteApp/phoenixd-lightning-wallet-ui.git'
@@ -32,7 +38,7 @@ main:
     args: []
     mounts:
         main: /root/.phoenix
-        dbjson: /usr/src/app/dbjson
+        dbjson: /usr/src/app/backend/dbjson
     gpu-acceleration: false
 # Defines what architectures will be supported by the service. This service supports x86_64 and aarch64 architectures.
 hardware-requirements:
@@ -95,12 +101,12 @@ interfaces:
         tor-config:
             # Port mappings are from the external port to the internal container port
             port-mapping:
-                80: '3000'
+                80: '32400'
         # Port mappings are from the external port to the internal container port
         lan-config:
             443:
                 ssl: true
-                internal: 3000
+                internal: 32400
         ui: true
         protocols:
             - tcp

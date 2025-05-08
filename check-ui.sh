@@ -6,7 +6,7 @@ if (($DURATION <= 30000)); then
     exit 60
 else
     # Check if the Phoenixd service and Node.js app are running inside the container
-    if curl --silent --fail http://127.0.0.1:3000 &>/dev/null; then
+    if curl --silent --fail http://127.0.0.1:32400 &>/dev/null; then
         echo "Service is healthy"
         exit 0
     else
