@@ -3,11 +3,7 @@
 printf "\n\n [i] Starting Phoenixd wallet application ...\n\n"
 
 CONF_FILE="/root/.phoenix/phoenix.conf"
-ENV_FILE="/usr/src/app/backend/.env"
 
-# Set the PHOENIX_API_URL in the environment file
-echo "PHOENIX_API_URL=http://127.0.0.1:9740" >> $ENV_FILE
-echo "Values copied to $ENV_FILE."
 
 # Start the phoenixd daemon
 if pgrep -x "phoenixd" > /dev/null; then
