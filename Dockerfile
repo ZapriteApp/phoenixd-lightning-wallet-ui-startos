@@ -30,6 +30,7 @@ ENV NODE_OPTIONS=--openssl-legacy-provider
 # Copy the rest of the project
 COPY /phoenix-server-wallet/ .
 
+RUN cd backend/dbjson && touch db.json
 # Build frontend
 RUN cd client && npm run build
 
@@ -38,6 +39,8 @@ RUN wget https://github.com/ACINQ/phoenixd/releases/download/v0.4.2/phoenix-0.4.
     && unzip -j phoenix-0.4.2-linux-x64.zip -d /usr/local/bin/ \
     && chmod +x /usr/local/bin/phoenixd \
     && rm phoenix-0.4.2-linux-x64.zip
+
+
 
 # Entrypoint and helper scripts
 COPY ./docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
