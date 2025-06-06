@@ -39,9 +39,9 @@ RUN wget https://github.com/ACINQ/phoenixd/releases/download/v0.4.2/phoenix-0.4.
     && chmod +x /usr/local/bin/phoenixd \
     && rm phoenix-0.4.2-linux-x64.zip
 
-RUN mkdir -p /usr/src/app/backend/dbjson \
-  && chmod -R 755 /usr/src/app/backend/dbjson \
-  && chmod 644 /usr/src/app/backend/.env
+# RUN mkdir -p /usr/src/app/backend/dbjson \
+#   && chmod -R 755 /usr/src/app/backend/dbjson \
+#   && chmod 644 /usr/src/app/backend/.env
 
 # Entrypoint and helper scripts
 COPY ./docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
@@ -55,8 +55,6 @@ RUN chmod 755 /usr/local/bin/docker_entrypoint.sh \
 # Expose backend port
 EXPOSE 32400
 
-# Start the app
-CMD ["docker_entrypoint.sh"]
 
 
 # ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]
