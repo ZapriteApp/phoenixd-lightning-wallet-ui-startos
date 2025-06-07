@@ -23,5 +23,6 @@ fi
 echo "Starting Node.js application..."
 # echo "PHOENIX_API_URL=http://127.0.0.1:9740" > /usr/src/app/backend/.env
 # cat /usr/src/app/backend/.env 
+cd /usr/src/app/backend
 export RUST_BACKTRACE=1
-exec node /usr/src/app/backend/server.js
+exec node server.js
