@@ -1,0 +1,4 @@
+[submodule "phoenix-server-wallet"]
+	path = phoenix-server-wallet
+	url = https://github.com/ZapriteApp/phoenix-server-wallet.git
+	branch = main
